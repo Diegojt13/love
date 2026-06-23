@@ -2,8 +2,6 @@
   --bg1:#09040d;
   --bg2:#16091f;
   --bg3:#2a0d2f;
-  --glass:rgba(255,255,255,.08);
-  --glass-2:rgba(255,255,255,.13);
   --text:#fff;
   --accent:#ff4d7d;
   --accent2:#ffb3c7;
@@ -315,12 +313,23 @@ h1{
   animation:blink .9s step-end infinite;
 }
 
+.hidden-signature{
+  opacity:0;
+  transform:translateY(18px);
+}
+
 .signature{
-  margin:18px 0 0;
+  margin-top:18px;
   text-align:right;
   font-family:'Cormorant Garamond', serif;
   font-size:1.35rem;
   color:#3b2337;
+  transition:opacity 1s ease, transform 1s ease;
+}
+
+.signature.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 @keyframes blink{50%{opacity:0}}

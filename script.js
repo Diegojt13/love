@@ -29,7 +29,7 @@ Diego`;
 
 let typingTimer = null;
 let musicPlaying = false;
-const speed = 85;
+const speed = 35;
 
 async function playMusic() {
   try {

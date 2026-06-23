@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Ti, Mi Amor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+  <div class="bg-shape shape-3"></div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="cancion1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button id="musicBtn" class="music-btn">▶ Música</button>
+
+  <main class="app">
+    <section class="hero" id="hero">
+      <p class="eyebrow">Una experiencia hecha con amor</p>
+      <h1>Para la persona que cambió mi mundo</h1>
+      <p class="subtitle">
+        No es solo una carta. Es una experiencia íntima, elegante y pensada para sentirse especial.
+      </p>
+
+      <div class="hero-actions">
+        <button id="startBtn" class="primary">Abrir sorpresa</button>
+      </div>
+
+      <div class="note">Toca el botón y deja que empiece la magia.</div>
+    </section>
+
+    <section class="stage hidden" id="stage">
+      <div class="card-shell">
+        <div class="card-glow"></div>
+
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-front"></div>
+          <div class="envelope-flap"></div>
+          <div class="seal" id="seal">❤</div>
+
+          <article class="letter">
+            <div class="letter-top">
+              <div class="photo-frame">
+                <img src="foto1.jpg" alt="Foto 1" class="photo active" />
+                <img src="foto2.jpg" alt="Foto 2" class="photo" />
+              </div>
+
+              <div class="letter-head">
+                <p class="letter-kicker">Mi amor,</p>
+                <h2 class="letter-title">Esto es para ti</h2>
+              </div>
+            </div>
+
+            <div class="first-line">
+              <span id="typed"></span><span class="cursor">|</span>
+            </div>
+
+            <div class="full-letter"></div>
+
+            <div class="signature">
+              Con todo mi amor,<br><strong>Diego</strong>
+            </div>
+
+            <button id="backBtn" class="secondary">Volver al inicio</button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

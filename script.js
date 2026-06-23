@@ -5,6 +5,7 @@ const stage = document.getElementById('stage');
 const envelope = document.getElementById('envelope');
 const seal = document.getElementById('seal');
 const typed = document.getElementById('typed');
+const signature = document.getElementById('signature');
 const musicBtn = document.getElementById('musicBtn');
 const bgMusic = document.getElementById('bgMusic');
 
@@ -22,14 +23,11 @@ Quiero que sepas que te admiro mucho. Admiro tu paciencia, tu ternura y tu valen
 
 Prometo seguir cuidando este amor con la misma ganas con las que lo siento hoy: escucharte, aprender, sorprenderte y ser tu compañero en lo fácil y en lo difícil. No sé qué nos traerá el futuro, pero sí sé que quiero recorrerlo contigo, construir recuerdos nuevos y seguir sumando razones para sonreír.
 
-Te amo más de lo que las palabras alcanzan, pero hoy te las regalo todas. Si alguna vez dudas de lo que siento, recuerda estos días y mira mi corazón: está todo allí, latiendo por ti.
-
-Con todo mi amor,
-Diego`;
+Te amo más de lo que las palabras alcanzan, pero hoy te las regalo todas. Si alguna vez dudas de lo que siento, recuerda estos días y mira mi corazón: está todo allí, latiendo por ti.`;
 
 let typingTimer = null;
 let musicPlaying = false;
-const speed = 35;
+const speed = 37;
 
 async function playMusic() {
   try {
@@ -65,6 +63,7 @@ document.addEventListener('touchend', unlockMusicOnce, { once: true });
 
 function typeLetter() {
   typed.textContent = '';
+  signature.classList.remove('show');
   let i = 0;
   clearInterval(typingTimer);
 
@@ -74,6 +73,9 @@ function typeLetter() {
 
     if (i >= letterText.length) {
       clearInterval(typingTimer);
+      setTimeout(() => {
+        signature.classList.add('show');
+      }, 500);
     }
   }, speed);
 }
@@ -113,6 +115,7 @@ function resetExperience() {
   stage.classList.add('hidden');
   hero.classList.remove('hidden');
   typed.textContent = '';
+  signature.classList.remove('show');
 }
 
 startBtn.addEventListener('click', openExperience);
